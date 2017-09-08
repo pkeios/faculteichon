@@ -15,7 +15,7 @@ int main()
 
         printf("                      ###########                ###########\n");
         printf("                     #####  ######              #####  ######\n");
-        printf("                    #####    ######            #####    ######\n");
+        printf("                    #####  * ######            #####  * ######\n");
         printf("                   #######  ########          #######  ########\n");
         printf("                   #################   ####   #################\n");
         printf("                   ### #################################### ###\n");
@@ -34,19 +34,19 @@ int main()
         printf("                      ######################################\n");
         printf("                              ####################### \n");
         printf("                                    ############# \n");
-        printf("\n\nSeleccione una opcion: \n");
+        printf("\nSeleccione una opcion: \n");
         scanf("%d",&opcion);
 
         switch(opcion)
         {
         case 1:
-            /*ingreso de A*/
+            /*Llamada ingreso de A*/
             printf("Ingrese primer numero: ");
             scanf("%d",&operandoA);
             system("cls");
             break;
         case 2:
-            /*ingreso de B*/
+            /*Llamada ingreso de B*/
             printf("Ingrese segundo numero: ");
             scanf("%d",&operandoB);
 
@@ -59,13 +59,13 @@ int main()
             system("cls");
             break;
         case 4:
-            /*Resta de A y B*/
+            /*Llamada Resta de A y B*/
             Restar(operandoA, operandoB);
             system("pause");
             system("cls");
             break;
         case 5:
-            /*Division de A y B*/
+            /*Llamada Division de A y B*/
 
             Dividir(operandoA, operandoB);
             system("pause");
@@ -73,27 +73,27 @@ int main()
 
             break;
         case 6:
-            /*Multiplicacion de A y B*/
+            /*Llamada Multiplicacion de A y B*/
             Multiplicar(operandoA, operandoB);
             system("pause");
             system("cls");
             break;
         case 7:
-            /*Factorial de A*/
+            /*Llamada Factorial de A*/
             Factorizar(operandoA);
             system("pause");
             system("cls");
             break;
         case 8:
-            /*Suma de A y B*/
+            /*Llamada a funcion Suma de A y B*/
             Sumar(operandoA, operandoB);
-            /*Resta de A y B*/
+            /*Llamada a funcion Resta de A y B*/
             Restar(operandoA, operandoB);
-            /*Division de A y B*/
+            /*Llamada a funcion Division de A y B*/
             Dividir(operandoA, operandoB);
-            /*Multiplicacion de A y B*/
+            /*Llamada a funcion Multiplicacion de A y B*/
             Multiplicar(operandoA, operandoB);
-            /*Factorial de A*/
+            /*Llamada a funcion Factorial de A*/
             Factorizar(operandoA);
             system("pause");
             system("cls");
