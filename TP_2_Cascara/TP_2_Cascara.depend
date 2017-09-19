@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1505706486 source:c:\users\keios\desktop\tp_2_cascara\main.c
+	"funciones.h"
+
+1505703477 c:\users\keios\desktop\tp_2_cascara\funciones.h
+	<stdio.h>
+	<stdlib.h>
+
+1505711998 source:c:\users\keios\desktop\tp_2_cascara\funciones.c
+	<stdlib.h>
+	"funciones.h"
+
