@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <conio.h>
 #include <string.h>
-#define TAM 10
+#define TAM 20
 #ifndef FUNCIONES_H_INCLUDED
 #define FUNCIONES_H_INCLUDED
 /** \brief estructura movie
@@ -19,12 +19,12 @@
 
 typedef struct{
 	int id;
-    char titulo[100];
+    char titulo[1000];
     char genero[100];
-    char duracion[10];
-    char descripcion[10000];
-    char puntaje[10];
-    char linkImagen[500];
+    char duracion[100];
+    char descripcion[2000];
+    char puntaje[100];
+    char linkImagen[10000];
     int estado;
 }EMovie;
 
@@ -47,12 +47,6 @@ int guardarEnArchivo(EMovie *);
  *
  */
 void agregarPelicula(EMovie*);
-/** \brief funcion que lista la lista de peliculas activas
- *
- * \param puntero a EMovie*
- *
- */
-void listarMovie(EMovie*);
 /** \brief funcion que elimina peliculas activas dando una baja logica
  *
  * \param puntero a EMovie*
@@ -65,5 +59,11 @@ void eliminarMovie(EMovie*);
  *
  */
 void generarPagina(EMovie*);
+/** \brief funcion que cambia los datos cargados en la estructura.
+ *
+ * \param puntero a EMovie**
+ *
+ */
+void editMovie(EMovie*);
 
 #endif

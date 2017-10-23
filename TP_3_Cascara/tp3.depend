@@ -1,0 +1,37 @@
+# depslib dependency file v1.0
+1508781187 source:c:\users\pmiño\desktop\tp3\main.c
+	"funciones.h"
+
+1508781189 c:\users\pmiño\desktop\tp3\funciones.h
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<string.h>
+
+1508781516 source:c:\users\pmiño\desktop\tp3\funciones.c
+	"funciones.h"
+
+1508784286 source:c:\users\pmiño\downloads\tp3-20171023t182413z-001\tp3\main.c
+	"funciones.h"
+
+1508783689 c:\users\pmiño\downloads\tp3-20171023t182413z-001\tp3\funciones.h
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<string.h>
+
+1508784287 source:c:\users\pmiño\downloads\tp3-20171023t182413z-001\tp3\funciones.c
+	"funciones.h"
+
+1508791128 source:c:\users\pmiño\desktop\tp3\tp3\main.c
+	"funciones.h"
+
+1508790276 c:\users\pmiño\desktop\tp3\tp3\funciones.h
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<string.h>
+
+1508791391 source:c:\users\pmiño\desktop\tp3\tp3\funciones.c
+	"funciones.h"
+

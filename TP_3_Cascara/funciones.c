@@ -47,14 +47,15 @@ void agregarPelicula(EMovie *movie)
 
 }
 
+
 void generarPagina(EMovie *movie)
 {
 
 		FILE *pagina;
-		char buffer[6080]={};
+		char buffer[60800]={};
 		int i;
 
-	    strcat(buffer,"<!DOCTYPE html><html lang='en'><head><meta charset='utf-8'><meta http-equiv='X-UA-Compatible' content='IE=edge'><meta name='viewport' content='idth=device-width, initial-scale=1'><title>Lista peliculas</title><link href='css/bootstrap.min.css' rel='stylesheet'><link href='css/custom.css' rel='stylesheet'><style>body{background:#8ba987 url('https://wallpaperscraft.com/image/dark_spots_texture_background_50355_1920x1080.jpg') no-repeat center center;background-size:100% 100%;color:white;padding: 0;margin: 0; background-size: cover;} h2{color: white; margin-bottom:65px;} h3 a{text-decoration:none;color:red;font-weight: bold;}.box1{background-color:rgba(0, 0, 0, 0.30);height: 600px;border-radius: 24px 24px 24px 24px; border: 0px solid #000000;} h3 a:hover{text-decoration:none;color:white;}</style></head><body><div class='container'><div class='row'>");
+	    strcat(buffer,"<!DOCTYPE html><html lang='en'><head><meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/><meta name='viewport' content='idth=device-width, initial-scale=1'><title>Lista peliculas</title><link href='css/bootstrap.min.css' rel='stylesheet'><link href='css/custom.css' rel='stylesheet'><style>body{background:#000 url('https://wallpaperscraft.com/image/dark_spots_texture_background_50355_1920x1080.jpg');margin:0 auto;background-repeat:no-repeat;background-size:100% 100%;color:white;padding: 0;margin: 0; background-size: cover;} h2{color: white; margin-bottom:65px;} h3 a{text-decoration:none;color:red;font-weight: bold;}.box1{background-color:rgba(0, 0, 0, 0.30);height: 600px;border-radius: 24px 24px 24px 24px; border: 0px solid #000000;} h3 a:hover{text-decoration:none;color:white;}</style></head><body><div class='container'><div class='row'>");
         strcat(buffer,"<h2>Trabajo Practico 3</h2>");
         for (i = 0; i < TAM; ++i)
         {
@@ -71,7 +72,7 @@ void generarPagina(EMovie *movie)
 
                 strcat(buffer,"<ul>");
 
-                strcat(buffer,"<li>Género:");
+                strcat(buffer,"<li>G&eacute;nero:");
                 strcat(buffer,movie[i].genero);
                 strcat(buffer,"</li>");
 
@@ -107,26 +108,35 @@ void generarPagina(EMovie *movie)
 
 }
 
-void listarMovie(EMovie *movie)
-{
-	int i;
-	printf("\nListado de peliculas:\n");
-	for (i = 0; i < TAM; ++i)
-	{
-		if ((movie+i)->estado==1)
-		{
-			printf("%d -- %s\n",(movie+i)->id,(movie+i)->titulo);
-		}
-	}
-}
-
 void eliminarMovie(EMovie *movie)
 {
 	int aux;
 	char s;
-    printf("\nColoque el id de la pelicula a eliminar:\n");
-    scanf("%d",&aux);
-	for (int i = 0; i < TAM; ++i)
+	int j;
+	int i;
+	int contador=0;
+	printf("\nListado de peliculas:\n");
+	for (j = 0; j < TAM; ++j)
+	{
+		if ((movie+j)->estado==1)
+		{
+			printf("%d -- %s\n",(movie+j)->id,(movie+j)->titulo);
+			contador++;
+		}
+	}
+    if (contador>0)
+    {
+	    printf("\nColoque el id de la pelicula a eliminar:\n");
+	    scanf("%d",&aux);
+    }
+    else
+    {
+   		printf("\nNo hay datos para mostrar!!!\n");
+   		system("pause");
+		system("cls");
+    }
+
+	for (i = 0; i < TAM; ++i)
 		{
 
 			if (aux==(movie+i)->id && (movie+i)->estado==1)
@@ -153,6 +163,108 @@ void eliminarMovie(EMovie *movie)
 			}
 
 		}
+}
+
+void editMovie(EMovie *movie)
+{
+	int aux;
+	int opcion;
+	char s;
+	int j;
+	int i;
+	int contador=0;
+	printf("\nListado de peliculas:\n");
+	for (j = 0; j < TAM; ++j)
+	{
+		if ((movie+j)->estado==1)
+		{
+			printf("%d -- %s\n",(movie+j)->id,(movie+j)->titulo);
+			contador++;
+		}
+	}
+    if (contador>0)
+    {
+	    printf("\nColoque el id de la pelicula a modificar:\n");
+	    scanf("%d",&aux);
+    }
+    else
+    {
+   		printf("\nNo hay datos para mostrar!!!\n");
+   		system("pause");
+		system("cls");
+    }
+	for (i = 0; i < TAM; ++i)
+	{
+
+		if (aux==(movie+i)->id && (movie+i)->estado==1)
+		{
+			printf("Estas a punto de modificar los datos de %s\n",(movie+i)->titulo);
+			printf("S/N?\n");
+			fflush(stdin);
+			s= tolower(getche());
+			if (s=='s')
+			{
+				printf("\nSeleccione segun corresponda:\n");
+				printf("1- Modificar Titulo\n");
+    			printf("2- Modificar LINK IMG\n");
+    			printf("3- Modificar Genero\n");
+    			printf("4- Modificar Puntaje\n");
+    			printf("5- Modificar Duracion\n");
+    			printf("6- Modificar Descripcion\n");
+    			fflush(stdin);
+    			scanf("%d",&opcion);
+				switch(opcion)
+    			{
+    				case 1:
+    				printf("\nIngrese Nuevo Titulo: ");
+            		fflush(stdin);
+            		gets((movie+i)->titulo);
+    				break;
+    				case 2:
+    				printf("Ingrese Nueva URL img Pelicula: ");
+            		fflush(stdin);
+            		gets((movie+i)->linkImagen);
+    				break;
+    				case 3:
+    				printf("\nIngrese Nuevo Genero: ");
+            		fflush(stdin);
+            		gets((movie+i)->genero);
+    				break;
+    				case 4:
+    				printf("\nIngrese Nuevo Puntaje(1-10)");
+            		fflush(stdin);
+            		gets((movie+i)->puntaje);
+    				break;
+    				case 5:
+    				printf("\nIngrese Nueva Duracion: ");
+            		fflush(stdin);
+            		gets((movie+i)->descripcion);
+    				break;
+    				case 6:
+    				printf("\nIngrese Nueva Descripcion: ");
+            		fflush(stdin);
+            		gets((movie+i)->descripcion);
+    				break;
+    				default:
+                    printf("\nNO ES UNA OPCION VALIDA");
+
+
+    			}
+				system("pause");
+				system("cls");
+				break;
+			}
+			else
+			{
+				printf("cancelado por el usuario\n");
+				system("pause");
+				system("cls");
+				break;
+			}
+		}
+
+	}
+
 }
 
 int cargarDesdeArchivo(EMovie *x)
@@ -199,3 +311,4 @@ int guardarEnArchivo(EMovie * x)
 
 	return 0;
 }
+
