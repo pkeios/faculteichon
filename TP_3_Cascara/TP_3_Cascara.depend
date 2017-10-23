@@ -1,0 +1,25 @@
+# depslib dependency file v1.0
+1508451586 source:c:\users\keison\desktop\punteros y archivos\tp_3_cascara\main.c
+	"funciones.h"
+
+1508451588 c:\users\keison\desktop\punteros y archivos\tp_3_cascara\funciones.h
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<string.h>
+
+1508462579 source:c:\users\keison\desktop\punteros y archivos\tp_3_cascara\funciones.c
+	"funciones.h"
+
+1508738882 source:c:\users\keison\desktop\tp_3_cascara\funciones.c
+	"funciones.h"
+
+1508739492 c:\users\keison\desktop\tp_3_cascara\funciones.h
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<string.h>
+
+1508737507 source:c:\users\keison\desktop\tp_3_cascara\main.c
+	"funciones.h"
+
